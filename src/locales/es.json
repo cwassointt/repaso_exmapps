@@ -1,0 +1,29 @@
+{
+  "home": {
+    "title": "Inicio",
+    "welcome": "Bienvenido a HIGN",
+    "analytics": {
+      "title": "Análisis de Exámenes de Estado Mental",
+      "subtitle": "Análisis de Puntuaciones",
+      "examCount": "Cantidad de Evaluaciones",
+      "highestScore": "Calificación Más Alta",
+      "lowestScore": "Calificación Más Baja",
+      "averageScore": "Calificación Promedio"
+    }
+  },
+  "examiner-performance-overview": {
+    "title": "Resumen de Rendimiento del Examinador",
+    "performance": "Rendimiento de Exámenes de Estado Mental",
+    "currentExamCount": "Cantidad Actual de Exámenes de Salud Mental Asignados",
+    "averageScore": "Promedio de Calificación Total de Exámenes de Salud Mental Asignados"
+  },
+  "page-not-found": {
+    "title": "Página No Encontrada",
+    "message": "La URL solicitada no se encontró en este servidor.",
+    "goHome": "Ir a Inicio"
+  },
+  "toolbar": {
+    "home": "Inicio",
+    "examinerPerformanceOverview": "Resumen del rendimiento del examinador"
+  }
+}
