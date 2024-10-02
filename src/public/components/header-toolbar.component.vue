@@ -21,7 +21,7 @@ export default {
   <header class="header-toolbar">
     <div class="left-section">
       <img src="https://hign.org/sites/default/files/2022-01/HIGN-logo-1200.png" alt="HIGN Logo" class="logo"/>
-      <span class="company-name">Hartford Institute for Geriatric Nursing</span>
+      <span class="company-name">{{$t('header.title')}}</span>
     </div>
     <nav>
       <ul>

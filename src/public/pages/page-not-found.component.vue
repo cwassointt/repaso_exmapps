@@ -1,4 +1,5 @@
 <script>
+
 export default {
   name: 'page-not-found'
 };
@@ -6,9 +7,9 @@ export default {
 
 <template>
   <div class="w-full">
-    <h1>Page Not Found</h1>
-    <p>The requested URL was not found on this server.</p>
-    <router-link to="/home">Go to Home</router-link>
+    <h1>{{$t('pageNotFound.title')}}</h1>
+    <p>{{ $t('pageNotFound.message') }}</p>
+    <router-link to="/home">{{ $t('pageNotFound.goHome') }}</router-link>
   </div>
 </template>
 

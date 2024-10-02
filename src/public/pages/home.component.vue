@@ -1,57 +1,72 @@
 <script>
-import {ExamService} from '../../nursing/services/exam.service';
-import MentalStateExamAnalytics from "../../nursing/components/mental-state-examn-analytics.component.vue";
+import { MentalStateExamService } from "../../shared/services/mental-state-exam.service.js";
+import { MentalStateExam } from "../../shared/model/mental-state-exam.entity.js";
+
 export default {
-  name: 'home',
-  components: {
-    MentalStateExamAnalytics
-  },
+  name: "home",
   data() {
     return {
       exams: [],
-      examCount: 0,
-      highestScore: 0,
-      lowestScore: 0,
-      averageScore: 0
+      totalScores: [],
+      exam: new MentalStateExam({}),
+      mentalStateExamService: new MentalStateExamService(),
     };
   },
-  created() {
-    this.fetchExamData();
-  },
   methods: {
-    async fetchExamData() {
-      try {
-        const response = await ExamService.getExams();
-        this.exams = response.data;
-        this.calculateAnalytics();
-      } catch (error) {
-        console.error('Error fetching exam data:', error);
-      }
+    calculateTotalScores() {
+      this.totalScores = this.exams.map(exam =>
+          exam.orientationScore +
+          exam.registrationScore +
+          exam.attentionAndCalculationScore +
+          exam.recallScore +
+          exam.languageScore
+      );
     },
-    calculateAnalytics() {
-      if (this.exams.length > 0) {
-        this.examCount = this.exams.length;
-        this.highestScore = Math.max(...this.exams.map(exam => exam.orientationScore + exam.registrationScore + exam.attentionAndCalculationScore + exam.recallScore + exam.languageScore));
-        this.lowestScore = Math.min(...this.exams.map(exam => exam.orientationScore + exam.registrationScore + exam.attentionAndCalculationScore + exam.recallScore + exam.languageScore));
-        this.averageScore = (this.exams.reduce((sum, exam) => sum + (exam.orientationScore + exam.registrationScore + exam.attentionAndCalculationScore + exam.recallScore + exam.languageScore), 0) / this.examCount).toFixed(2);
-      }
+    getHighestScore() {
+      return this.totalScores.length ? Math.max(...this.totalScores) : 0;
+    },
+    getLowestScore() {
+      return this.totalScores.length ? Math.min(...this.totalScores) : 0;
+    },
+    getAverageScore() {
+      return this.totalScores.length ? this.totalScores.reduce((a, b) => a + b, 0) / this.totalScores.length : 0;
     }
+  },
+  created() {
+    this.mentalStateExamService.getAll().then(response => {
+      if (Array.isArray(response.data)) {
+        this.exams = response.data.map(exam => new MentalStateExam(exam));
+        this.calculateTotalScores();
+      } else {
+        console.error('Unexpected response format:', response.data);
+      }
+      console.log(this.exams);
+    }).catch(error => console.error(error));
   }
-};
+}
 </script>
 
 <template>
-  <div class="w-full">
-    <h1>Home</h1>
-    <p>Welcome to HIGN</p>
-    <mental-state-exam-analytics
-        :examCount="examCount"
-        :highestScore="highestScore"
-        :lowestScore="lowestScore"
-        :averageScore="averageScore"
-    />
-  </div>
+  <h1>{{$t('homeCard.title')}}</h1>
+  <p>{{$t('homeCard.message')}}</p>
+  <pv-card class="card">
+    <template #title>{{ $t('homeCard.cardTitle') }}</template>
+    <template #subtitle>{{ $t('homeCard.cardSubtitle') }}</template>
+    <template #content>
+      <ul>
+        <li>{{ $t('homeCard.examCount') }} {{ exams.length }}</li>
+        <li>{{ $t('homeCard.highestScore') }} {{ getHighestScore() }}</li>
+        <li>{{ $t('homeCard.lowestScore') }} {{ getLowestScore() }}</li>
+        <li>{{ $t('homeCard.averageScore') }} {{ getAverageScore() }}</li>
+      </ul>
+    </template>
+  </pv-card>
 </template>
 
 <style scoped>
+.card {
+  background: #D1E4FA;
+  border-radius: 10px;
+  color: black;
+}
 </style>

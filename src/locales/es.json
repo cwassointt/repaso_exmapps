@@ -1,29 +1,28 @@
 {
-  "home": {
+  "examinerItem": {
+    "subtitle": "Rendimiento del Examen del Estado Mental",
+    "currentExamCount": "Cantidad Actual de Exámenes de Salud Mental Asignados:",
+    "averageExamTotal": "Promedio de Calificación Total de Exámenes de Salud Mental Asignados:"
+  },
+  "examinerList": {
+    "title": "Descripción general del desempeño del examinador"
+  },
+  "header": {
+    "title": "Instituto Hartford de Enfermería Geriátrica"
+  },
+  "homeCard": {
     "title": "Inicio",
-    "welcome": "Bienvenido a HIGN",
-    "analytics": {
-      "title": "Análisis de Exámenes de Estado Mental",
-      "subtitle": "Análisis de Puntuaciones",
-      "examCount": "Cantidad de Evaluaciones",
-      "highestScore": "Calificación Más Alta",
-      "lowestScore": "Calificación Más Baja",
-      "averageScore": "Calificación Promedio"
-    }
+    "message": "Bienvenido a HIGN",
+    "cardTitle": "Análisis del Examen del Estado Mental:",
+    "cardSubtitle": "Análisis de Puntuaciones:",
+    "examCount": "Cantidad de Exámenes:",
+    "highestScore": "Puntuación Más Alta:",
+    "lowestScore": "Puntuación Más Baja:",
+    "averageScore": "Puntuación Promedio:"
   },
-  "examiner-performance-overview": {
-    "title": "Resumen de Rendimiento del Examinador",
-    "performance": "Rendimiento de Exámenes de Estado Mental",
-    "currentExamCount": "Cantidad Actual de Exámenes de Salud Mental Asignados",
-    "averageScore": "Promedio de Calificación Total de Exámenes de Salud Mental Asignados"
-  },
-  "page-not-found": {
+  "pageNotFound": {
     "title": "Página No Encontrada",
     "message": "La URL solicitada no se encontró en este servidor.",
     "goHome": "Ir a Inicio"
-  },
-  "toolbar": {
-    "home": "Inicio",
-    "examinerPerformanceOverview": "Resumen del rendimiento del examinador"
   }
 }

@@ -1,7 +1,8 @@
-import http from '../../shared/services/http-common';
+import http from "../../shared/services/http-common.js";
 
-export class ExamService {
+export class MentalStateExamService {
     resourceEndpoint = '/mental-state-exams';
+
     getAll() {
         return http.get(this.resourceEndpoint);
     }
@@ -10,4 +11,3 @@ export class ExamService {
         return http.get(`${this.resourceEndpoint}/${id}`);
     }
 }
-

@@ -1,29 +1,28 @@
 {
-  "home": {
+  "examinerItem": {
+    "subtitle": "Mental State Exam Performance",
+    "currentExamCount": "Current Assigned Mental State Exam Count:",
+    "averageExamTotal": "Average Assigned Mental State Exam Total Score:"
+  },
+  "examinerList": {
+    "title": "Examiner Perfomance Overview"
+  },
+  "header": {
+    "title": "Hartford Institute for Geriatric Nursing"
+  },
+  "homeCard": {
     "title": "Home",
-    "welcome": "Welcome to HIGN",
-    "analytics": {
-      "title": "Mental State Exam Analytics",
-      "subtitle": "Score Analytics",
-      "examCount": "Exam Count",
-      "highestScore": "Highest Score",
-      "lowestScore": "Lowest Score",
-      "averageScore": "Average Score"
-    }
+    "message": "Welcome to HIGN",
+    "cardTitle": "Mental State Exam Analytics:",
+    "cardSubtitle": "Score Analytics:",
+    "examCount": "Exam Count:",
+    "highestScore": "Highest Score:",
+    "lowestScore": "Lowest Score:",
+    "averageScore": "Average Score:"
   },
-  "examiner-performance-overview": {
-    "title": "Examiner Performance Overview",
-    "performance": "Mental State Exam Performance",
-    "currentExamCount": "Current Assigned Mental State Exam Count",
-    "averageScore": "Average Assigned Mental State Exam Total Score"
-  },
-  "page-not-found": {
+  "pageNotFound": {
     "title": "Page Not Found",
-    "message": "The requested URL was not found on this server.",
+    "message": "The requested URL was not found on  this server.",
     "goHome": "Go to Home"
-  },
-  "toolbar": {
-    "home": "Home",
-    "examinerPerformanceOverview": "Examiner Performance Overview"
   }
 }
